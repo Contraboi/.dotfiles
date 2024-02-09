@@ -79,16 +79,6 @@ _G.packer_plugins = {
     path = "/Users/contraboi/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["cellular-automaton.nvim"] = {
-    loaded = true,
-    path = "/Users/contraboi/.local/share/nvim/site/pack/packer/start/cellular-automaton.nvim",
-    url = "https://github.com/eandrju/cellular-automaton.nvim"
-  },
-  ["cloak.nvim"] = {
-    loaded = true,
-    path = "/Users/contraboi/.local/share/nvim/site/pack/packer/start/cloak.nvim",
-    url = "https://github.com/laytan/cloak.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/contraboi/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -217,11 +207,6 @@ _G.packer_plugins = {
     path = "/Users/contraboi/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
-  ["vim-be-good"] = {
-    loaded = true,
-    path = "/Users/contraboi/.local/share/nvim/site/pack/packer/start/vim-be-good",
-    url = "https://github.com/ThePrimeagen/vim-be-good"
-  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/contraboi/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -231,11 +216,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/contraboi/.local/share/nvim/site/pack/packer/start/vim-prettier",
     url = "https://github.com/prettier/vim-prettier"
-  },
-  ["zen-mode.nvim"] = {
-    loaded = true,
-    path = "/Users/contraboi/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
-    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 

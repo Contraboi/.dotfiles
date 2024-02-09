@@ -1,6 +1,9 @@
 require("contraboi.set")
 require("contraboi.remap")
 
+local augroup = vim.api.nvim_create_augroup
+local ContraGroup = augroup('ContraGroup', {})
+
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
 
@@ -20,7 +23,7 @@ autocmd('TextYankPost', {
 })
 
 autocmd({"BufWritePre"}, {
-    group = ThePrimeagenGroup,
+    group = ContraGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })

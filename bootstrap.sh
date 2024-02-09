@@ -129,8 +129,9 @@ install_dotfiles () {
         local src dst dir
         src=$(eval echo "$line" | cut -d '=' -f 1)
         dst=$(eval echo "$line" | cut -d '=' -f 2)
-        di=$(dirname $dst)
-
+        dir=$(dirname $dst)
+	
+	printf "asdf: $dir\n"
         mkdir -p "$dir"
         link_file "$src" "$dst"
     done
