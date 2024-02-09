@@ -10,7 +10,7 @@
 	pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
 [core]
 	excludesfile = /Users/contraboi/.gitignore_global
-    editor = nvim
+	editor = nvim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
