@@ -2,7 +2,6 @@
 #
 # bootstrap installs things.
 
-cd "$(dirname "$0")/.."
 DOTFILES=$(pwd -P)
 
 set -e
@@ -121,12 +120,16 @@ install_dotfiles () {
 
   find -H "$DOTFILES" -maxdepth 2 -name 'links.prop' -not -path '*.git*' | while read linkfile
   do
+      printf "linkfile: $linkfile\n"
     cat "$linkfile" | while read line
     do
+        if [ -z "$line" ]; then
+            continue
+        fi
         local src dst dir
         src=$(eval echo "$line" | cut -d '=' -f 1)
         dst=$(eval echo "$line" | cut -d '=' -f 2)
-        dir=$(dirname $dst)
+        di=$(dirname $dst)
 
         mkdir -p "$dir"
         link_file "$src" "$dst"
