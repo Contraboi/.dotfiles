@@ -120,7 +120,6 @@ install_dotfiles () {
 
   find -H "$DOTFILES" -maxdepth 2 -name 'links.prop' -not -path '*.git*' | while read linkfile
   do
-      printf "linkfile: $linkfile\n"
     cat "$linkfile" | while read line
     do
         if [ -z "$line" ]; then
@@ -130,8 +129,7 @@ install_dotfiles () {
         src=$(eval echo "$line" | cut -d '=' -f 1)
         dst=$(eval echo "$line" | cut -d '=' -f 2)
         dir=$(dirname $dst)
-	
-	printf "asdf: $dir\n"
+
         mkdir -p "$dir"
         link_file "$src" "$dst"
     done
