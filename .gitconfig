@@ -1,0 +1,20 @@
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[user]
+	name = Selmir Nedzibi
+	email = Contraboi@users.noreply.github.com
+[alias]
+	pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
+[core]
+	excludesfile = /Users/contraboi/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/contraboi/.stCommitMsg
