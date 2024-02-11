@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -126,9 +126,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # docker
 export PATH="$PATH:$HOME/.docker/bin"
 
-alias fp="bash ~/.dotfiles/scripts/tmux-sessionizer"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias ls='colorls'
+# Enable tab completion for colorls
+source $(dirname $(gem which colorls))/tab_complete.sh
+alias lc='arch -x86_64 colorls'
+
