@@ -15,6 +15,10 @@ return require('packer').startup(function(use)
         }
     }
 
+    use {
+        'tpope/vim-surround',
+    }
+
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
@@ -42,8 +46,13 @@ return require('packer').startup(function(use)
             ts_update()
         end, }
     use("nvim-treesitter/playground")
-    use("theprimeagen/harpoon")
-    use("theprimeagen/refactoring.nvim")
+    use({
+        "theprimeagen/harpoon",
+        branch = "harpoon2",
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    })
     use("mbbill/undotree")
     use("tpope/vim-fugitive")
     use("nvim-treesitter/nvim-treesitter-context")
@@ -75,6 +84,18 @@ return require('packer').startup(function(use)
         }
     }
 
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {
+            autotag = { enable = true }
+
+        } end
+    }
+
+    use {
+        "windwp/nvim-ts-autotag",
+        config = function() require("nvim-ts-autotag").setup {} end
+    }
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }

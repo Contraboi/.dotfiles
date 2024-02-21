@@ -3,8 +3,11 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  'tsserver',
-  'rust_analyzer',
+    'eslint',
+    'tailwindcss',
+    'tsserver',
+    'lua_ls',
+    'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim'
@@ -19,7 +22,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
 })
-
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
@@ -47,8 +49,10 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
   vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
   vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+  vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format() end, opts)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "<leader>vcc", function() vim.lsp.buf.completion() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
@@ -57,4 +61,3 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
-
