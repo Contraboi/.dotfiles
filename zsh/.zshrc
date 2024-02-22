@@ -131,5 +131,7 @@ export PATH="$PATH:$HOME/.docker/bin"
 
 # Enable tab completion for colorls
 source $(dirname $(gem which colorls))/tab_complete.sh
-alias lc='arch -x86_64 colorls'
+alias ls='arch -x86_64 colorls'
 
+# nvim
+alias v='nvim'

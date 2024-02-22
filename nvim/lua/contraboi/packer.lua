@@ -15,9 +15,10 @@ return require('packer').startup(function(use)
         }
     }
 
-    use {
-        'tpope/vim-surround',
-    }
+    use {'folke/neodev.nvim', opts = {} }
+    use 'nvim-telescope/telescope-media-files.nvim'
+    use 'tpope/vim-surround'
+
 
     use({
         'rose-pine/neovim',
