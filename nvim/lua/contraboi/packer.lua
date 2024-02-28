@@ -17,6 +17,13 @@ return require('packer').startup(function(use)
 
     use {'folke/neodev.nvim', opts = {} }
     use 'nvim-telescope/telescope-media-files.nvim'
+    use {
+        "princejoogie/chafa.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "m00qek/baleia.nvim"
+        },
+    }
     use 'tpope/vim-surround'
 
 
