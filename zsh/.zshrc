@@ -135,3 +135,4 @@ alias ls='arch -x86_64 colorls'
 
 # nvim
 alias v='nvim'
+export PATH="/usr/local/opt/openssl@3/bin:$PATH"

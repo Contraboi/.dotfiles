@@ -16,16 +16,7 @@ return require('packer').startup(function(use)
     }
 
     use {'folke/neodev.nvim', opts = {} }
-    use 'nvim-telescope/telescope-media-files.nvim'
-    use {
-        "princejoogie/chafa.nvim",
-        requires = {
-            "nvim-lua/plenary.nvim",
-            "m00qek/baleia.nvim"
-        },
-    }
     use 'tpope/vim-surround'
-
 
     use({
         'rose-pine/neovim',
@@ -38,12 +29,7 @@ return require('packer').startup(function(use)
     use({
         "folke/trouble.nvim",
         config = function()
-            require("trouble").setup {
-                icons = false,
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
+            require("trouble").setup {}
         end
     })
 
@@ -109,4 +95,5 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
     use("github/copilot.vim")
+    use("nvim-tree/nvim-tree.lua")
 end)
