@@ -6,17 +6,10 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 require("nvim-tree").setup({
-    sort = {
-        sorter = "case_sensitive",
-    },
+    disable_netrw = true,
     view = {
         width = 30,
-    },
-    renderer = {
-        group_empty = true,
-    },
-    filters = {
-        dotfiles = true,
+        side = "right",
     },
 })
 
