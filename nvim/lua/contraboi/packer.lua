@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
         as = 'rose-pine',
         config = function()
             vim.cmd('colorscheme rose-pine')
+            ColorMyPencils()
         end
     })
 
