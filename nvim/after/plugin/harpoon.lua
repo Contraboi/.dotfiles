@@ -1,6 +1,6 @@
 local harpoon = require("harpoon")
 
-harpoon:setup()
+harpoon:setup({})
 
 -- basic telescope configuration
 local conf = require("telescope.config").values
