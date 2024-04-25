@@ -11,6 +11,7 @@ return {
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
     'j-hui/fidget.nvim',
+    'folke/neodev.nvim',
   },
 
   config = function()
@@ -109,6 +110,11 @@ return {
     require('fidget').setup {}
     require('mason').setup()
     require('mason-lspconfig').setup {
+      require('neodev').setup {
+        on_attach = function(client, bufnr)
+          vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>dd', '<cmd>lua require("neodev").open()<CR>', { noremap = true, silent = true })
+        end,
+      },
       ensure_installed = {
         'lua_ls',
         'tsserver',
