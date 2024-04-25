@@ -10,6 +10,8 @@ local utils = {
   --  This is equivalent to:
   --    require('Comment').setup({})
 
+  { 'github/copilot.vim' },
+
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 

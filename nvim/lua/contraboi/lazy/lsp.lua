@@ -6,10 +6,7 @@ local lsp_plugins = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-
-      -- Useful status updates for LSP.
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      'j-hui/fidget.nvim',
 
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
@@ -52,6 +49,7 @@ local lsp_plugins = {
           --  Similar to document symbols, except searches over your entire project.
           map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
+          map('<leader>vrf', require('telescope.builtin').lsp_references, '[V]iew [R]e[F]erences')
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
@@ -68,6 +66,16 @@ local lsp_plugins = {
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
+          vim.diagnostic.config {
+            float = {
+              focusable = false,
+              style = 'minimal',
+              border = 'rounded',
+              source = 'always',
+              header = '',
+              prefix = '',
+            },
+          }
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
@@ -103,13 +111,6 @@ local lsp_plugins = {
 
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-      --
-      --  Add any additional override configuration in the following tables. Available keys are:
-      --  - cmd (table): Override the default command used to start the server
-      --  - filetypes (table): Override the default list of associated filetypes for the server
-      --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-      --  - settings (table): Override the default settings passed when initializing the server.
-      --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         gopls = {},
         tsserver = {},
@@ -267,6 +268,8 @@ local lsp_plugins = {
       }
     end,
   },
+  { 'hrsh7th/cmp-cmdline' },
+  { 'hrsh7th/cmp-buffer' },
   {
     'stevearc/conform.nvim',
     lazy = false,
@@ -294,7 +297,8 @@ local lsp_plugins = {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { { 'prettierd', 'prettier' } },
+        javascript = { { 'prettier' } },
+        ['*'] = { 'codespell' },
       },
     },
   },
