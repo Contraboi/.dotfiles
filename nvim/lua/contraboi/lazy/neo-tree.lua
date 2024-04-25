@@ -3,10 +3,6 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.api.nvim_create_autocmd('VimEnter', {
-  command = 'set nornu nonu | Neotree toggle',
-})
-
 return {
   'nvim-neo-tree/neo-tree.nvim',
   version = '*',
