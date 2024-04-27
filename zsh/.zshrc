@@ -131,8 +131,28 @@ export PATH="$PATH:$HOME/.docker/bin"
 
 # Enable tab completion for colorls
 source $(dirname $(gem which colorls))/tab_complete.sh
-alias ls='arch -x86_64 colorls'
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
 # nvim
 alias v='nvim'
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+
+# Set up fzf key bindings and auto-completion
+eval "$(fzf --zsh)"
+
+# -- Use fd instead of fzf --
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude .git . "$1"
+}
+
+fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude .git . "$1"
+}
+
+source ~/.dotfiles/zsh/fzf-git.sh/fzf-git.sh
+
+alias bat="cat"
