@@ -156,3 +156,11 @@ fzf_compgen_dir() {
 source ~/.dotfiles/zsh/fzf-git.sh/fzf-git.sh
 
 alias bat="cat"
+
+# pnpm
+export PNPM_HOME="/Users/contraboi/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

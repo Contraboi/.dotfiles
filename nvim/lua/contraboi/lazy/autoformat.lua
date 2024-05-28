@@ -25,7 +25,10 @@ return {
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      javascript = { { 'prettier' } },
+      typescript = { { 'prettierd', 'prettier' } },
+      typescriptreact = { { 'prettierd', 'prettier' } },
+      javascript = { { 'prettierd', 'prettier' } },
+      javascriptreact = { { 'prettierd', 'prettier' } },
       ['*'] = { 'codespell' },
     },
   },
