@@ -5,6 +5,7 @@ tap "mongodb/brew"
 tap "ngrok/ngrok"
 tap "sass/sass"
 tap "shivammathur/php"
+tap homebrew/cask-fonts
 
 # Dependency manager for Cocoa projects
 brew "cocoapods"
@@ -18,8 +19,6 @@ brew "fzf"
 brew "gcc"
 # Powerful, lightweight programming language
 brew "lua"
-# MongoDB Shell to connect, configure, query, and work with your MongoDB database
-brew "mongosh"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Platform built on V8 to build network applications
@@ -32,8 +31,6 @@ brew "postgresql@14"
 brew "scalingo"
 # Terminal multiplexer
 brew "tmux"
-# High-performance, schema-free, document-oriented database
-brew "mongodb/brew/mongodb-community"
 # Stylesheet Preprocessor
 brew "sass/sass/sass"
 # Reverse proxy, secure introspectable tunnels to localhost
@@ -46,9 +43,19 @@ brew "git"
 brew "bat"
 # Eza
 brew "eza"
+# better grep
+brew "ripgrep"
+
+# Install zsh stuff
+brew "font-hack-nerd-font"
+brew "zsh"
+brew install "zsh-autosuggestions"
+brew install "zsh-syntax-highlighting"
 
 cask "raycast"
 cask "brave-browser"
 cask "stats"
 cask "discord"
 cask "rectangle"
+cask "alacritty"
+cask "spotify"
