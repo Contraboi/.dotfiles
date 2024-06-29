@@ -27,8 +27,6 @@ brew "node"
 brew "php"
 # Object-relational database system
 brew "postgresql@14"
-# CLI for working with Scalingo's PaaS
-brew "scalingo"
 # Terminal multiplexer
 brew "tmux"
 # Stylesheet Preprocessor
@@ -45,6 +43,8 @@ brew "bat"
 brew "eza"
 # better grep
 brew "ripgrep"
+# better cd
+brew "zoxide"
 
 # Install zsh stuff
 brew "font-hack-nerd-font"
