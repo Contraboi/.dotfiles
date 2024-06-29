@@ -7,7 +7,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -104,8 +103,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # docker
 export PATH="$PATH:$HOME/.docker/bin"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(oh-my-posh init zsh)"
 
 # Enable tab completion for colorls
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
@@ -114,7 +112,7 @@ alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time
 alias v='nvim'
 
 # zioxide
-alias cd="z"
+# alias cd="z"
 
 # Set up fzf key bindings and auto-completion
 eval "$(fzf --zsh)"
@@ -132,7 +130,7 @@ fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude .git . "$1"
 }
 
-alias bat="cat"
+alias cat="bat"
 
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
@@ -144,4 +142,5 @@ setopt hist_verify
 
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
+
 
