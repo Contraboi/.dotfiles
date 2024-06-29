@@ -7,10 +7,6 @@ tap "sass/sass"
 tap "shivammathur/php"
 tap homebrew/cask-fonts
 
-# Dependency manager for Cocoa projects
-brew "cocoapods"
-# Get a file from an HTTP, HTTPS or FTP server
-brew "curl"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Command-line fuzzy finder written in Go
@@ -45,12 +41,15 @@ brew "eza"
 brew "ripgrep"
 # better cd
 brew "zoxide"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
 
 # Install zsh stuff
 brew "font-hack-nerd-font"
 brew "zsh"
 brew install "zsh-autosuggestions"
 brew install "zsh-syntax-highlighting"
+brew install "oh-my-posh"
 
 cask "raycast"
 cask "brave-browser"

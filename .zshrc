@@ -102,8 +102,8 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # docker
 export PATH="$PATH:$HOME/.docker/bin"
+eval "$(oh-my-posh init zsh --config ~/.dotfiles/ohmyposh/zen.toml)"
 
-eval "$(oh-my-posh init zsh)"
 
 # Enable tab completion for colorls
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
