@@ -130,6 +130,7 @@ fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude .git . "$1"
 }
 
+# better cat
 alias cat="bat"
 
 HISTFILE=$HOME/.zhistory
